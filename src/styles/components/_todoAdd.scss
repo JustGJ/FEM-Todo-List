@@ -1,0 +1,35 @@
+.todoAdd {
+    display: flex;
+    background-color: #FFFFFF;
+    box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+    border-radius: 5px;
+    padding: 1.25rem 0 1.25rem 1.25rem;
+    margin-top: 2.5rem;
+
+    &__icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 24px;
+        width: 24px;
+        padding: 0.25rem;
+        border-radius: 50%;
+        border: 1px solid #E3E4F1;
+    }
+    
+
+    i {
+        color: #9495A5;
+    }
+    input {
+        margin-left: 1.5rem;
+        width: 100%;
+        font-family: inherit;
+        outline: none;
+        border: none;
+        letter-spacing: -0.25px;
+        line-height: 1.2rem;
+        font-size: 1.3rem;
+        color: #9495A5;
+    }
+}

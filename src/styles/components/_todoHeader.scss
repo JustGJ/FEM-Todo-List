@@ -1,0 +1,29 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    height: 48px;
+    
+    h1 {
+        color: #FFFFFF;
+        font-size: 40px;
+        line-height: 40px;
+        letter-spacing: 15px;    
+    }
+    
+    button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        transition: .3s;
+
+        img {
+            width: 21px;
+
+            &:hover {
+                transition: .3s;
+                transform: rotateZ(45deg);
+            }
+        }      
+    }   
+}
+
