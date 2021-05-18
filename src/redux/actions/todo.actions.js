@@ -1,22 +1,27 @@
 export const ADD_TODO = 'ADD_TODO';
+export const DELETE_TODO = 'DELETE_TODO';
+export const CHANGE_CHECKED_TODO = 'CHANGE_CHECKED_TODO';
 
-const addTodo = () => {
+
+export const addTodo = data => {
     return {
-        type: ADD_TODO
+        type: ADD_TODO,
+        payload: data 
     }
 }
 
+export const changeCheckedTodo = data => {
+    console.log(data);
+    return {
+        type: CHANGE_CHECKED_TODO,
+        payload: data 
+    }
+}
 
-
-// export const apiCall = () => {
-//     return (dispatch) => {
-//         dispatch(loadApiComments());
-//         axios.get('http://jsonplaceholder.typicode.com/comments')
-//         .then( res => {
-//             dispatch(loadCommentsSuccess(res.data));
-//         })
-//         .catch(err => {
-//             dispatch(loadCommentsError(err.message))
-//         })
-//     }
-// }
+export const deleteTodo = data => {
+    console.log(data);
+    return {
+        type: DELETE_TODO,
+        payload: data 
+    }
+}

@@ -1,13 +1,32 @@
-import React from 'react';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux'
+import { addTodo } from '../redux/actions/todo.actions';
 
 const TodoAdd = () => {
+
+
+    const [inputValue, setInputValue] = useState('')
+
+    const dispatch = useDispatch()
+
+    const newTodo = () => {
+        inputValue !== '' &&
+        dispatch(addTodo(inputValue));
+        setInputValue('');
+    }
+
     return (
         <div className="todoAdd">
             <div className="todoAdd__icon">
-                <i class="fas fa-plus"></i>
+                <i className="fas fa-plus" onClick={() => newTodo()}></i>
             </div>
-            <input type="text" placeholder="Create a new todo ..." />
+            <input 
+                type="text" 
+                placeholder="Create a new todo ..." 
+                value={inputValue} 
+                onChange={(e) => setInputValue(e.target.value)} 
+                maxLength="35"
+            />
         </div>
     );
 };

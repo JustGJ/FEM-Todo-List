@@ -3,21 +3,29 @@ import TodoAdd from '../components/TodoAdd';
 import TodoHeader from '../components/TodoHeader';
 import Todo from '../components/Todo';
 
-import { useSelector } from 'react-redux'
+import { useSelector } from 'react-redux';
 
+const TodosManager = ({ darkMode, setDarkMode }) => {
+	const todos = useSelector(state => state);
 
-const TodosManager = ( { darkMode, setDarkMode }) => {
+	const todosDisplay = todos.map(todo => {
+		return (
+			<Todo
+				key={todo.id}
+				id={todo.id}
+				todo={todo.todo}
+				checked={todo.checked}
+			/>
+		);
+	});
 
-    const todos = useSelector(state => state.todos)
-    console.log(todos);
-
-    return (
-        <div className="todoManager">
-            <TodoHeader darkMode={darkMode} setDarkMode={setDarkMode} />
-            <TodoAdd />
-            <Todo />
-        </div>
-    );
+	return (
+		<div className="todoManager">
+			<TodoHeader darkMode={darkMode} setDarkMode={setDarkMode} />
+			<TodoAdd />
+			{todosDisplay}
+		</div>
+	);
 };
 
-export default TodosManager; 
+export default TodosManager;
