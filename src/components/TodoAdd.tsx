@@ -4,12 +4,11 @@ import { addTodo } from '../redux/actions/todo.actions';
 
 const TodoAdd = () => {
 
-
-    const [inputValue, setInputValue] = useState('')
+    const [inputValue, setInputValue] = useState<string>('')
 
     const dispatch = useDispatch()
 
-    const newTodo = () => {
+    const newTodo = ():void => {
         inputValue !== '' &&
         dispatch(addTodo(inputValue));
         setInputValue('');
@@ -25,7 +24,7 @@ const TodoAdd = () => {
                 placeholder="Create a new todo ..." 
                 value={inputValue} 
                 onChange={(e) => setInputValue(e.target.value)} 
-                maxLength="35"
+                // maxLength="35"
             />
         </div>
     );

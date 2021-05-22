@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
+import { IDarkMode } from "../pages/TodosManager";
 import iconSun from "../images/icon-sun.svg";
 import iconMoon from "../images/icon-moon.svg";
 
-const TodoHeader = ( { darkMode, setDarkMode }) => {
+const TodoHeader : React.FC<IDarkMode> = ( { darkMode, setDarkMode }) => {
 
-    const htmlTag = document.body.parentElement;
+    const htmlTag:any | string = document.body.parentElement;
    
     useEffect(() => {
         if (!localStorage.getItem('theme')) {  // Renvoie la valeur associée à la clé passée en paramètre. Ici, si il n'y a pas de value, alors ...
@@ -16,7 +17,8 @@ const TodoHeader = ( { darkMode, setDarkMode }) => {
         }
     }, [])
     
-    const switchTheme = () => {
+    // == Change theme
+    const switchTheme = ():void => {
         if (!darkMode) {
             localStorage.setItem('theme', 'light')
             htmlTag.setAttribute('data-theme', localStorage.getItem('theme'))

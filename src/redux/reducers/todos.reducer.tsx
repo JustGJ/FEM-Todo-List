@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
+import {  } from "../interface";
 import { ADD_TODO, CHANGE_CHECKED_TODO, DELETE_TODO } from '../actions/todo.actions';
 
 const initialStateTodos = {
@@ -12,27 +13,29 @@ const initialStateTodos = {
 	],
 };
 
-const todosReducer = (state = initialStateTodos.todos, action) => {
-	if (localStorage.getItem('todosData'))
-		state = JSON.parse(localStorage.getItem('todosData'));
+const todosReducer = (state = initialStateTodos.todos, action:any):any => { // revoir le any !!!!!!!! 
+	// if (localStorage.getItem('todosData'))
+	// 	state = JSON.parse(localStorage.getItem('todosData'));
 
 	switch (action.type) {
 		case ADD_TODO:
 			state = [...state, { id: uuidv4(), todo: action.payload, checked: false }];
-			localStorage.setItem('todosData', JSON.stringify(state));
+			// localStorage.setItem('todosData', JSON.stringify(state));
 			return state;
 
 		case CHANGE_CHECKED_TODO:
 			return state.map(todo => {
 				if (todo.id === action.payload.id) todo.checked = action.payload.checked;
-				localStorage.setItem('todosData', JSON.stringify(state));
+				// localStorage.setItem('todosData', JSON.stringify(state));
 				return todo;
 			});
 
 		case DELETE_TODO:
-			const todoIndex = state.findIndex(todo => todo.id === action.id);
+			console.log(action.payload);
+			const todoIndex: number = state.findIndex(todo => todo.id === action.payload);
+			console.log(todoIndex);
 			state.splice(todoIndex, 1);
-			localStorage.setItem('todosData', JSON.stringify(state));
+			// localStorage.setItem('todosData', JSON.stringify(state));
 			return state;
 
 		default:

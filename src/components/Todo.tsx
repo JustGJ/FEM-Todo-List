@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { changeCheckedTodo, deleteTodo } from '../redux/actions/todo.actions';
 import cross from '../images/icon-cross.svg';
+import { ITodo } from '../redux/interface';
 
-const Todo = ({ id, todo, checked }) => {
-	const [inputContent, setInputContent] = useState(todo);
+const Todo : React.FC <ITodo> = ({ id, todo, checked }) => {
+	const [inputContent, setInputContent] = useState<string>(todo);
 	const [isEdit, setIsEdit] = useState(false);
 
 	const dispatch = useDispatch();
