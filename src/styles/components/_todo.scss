@@ -6,6 +6,7 @@
 	border-radius: 5px;
 	border-bottom: 1px solid #E3E4F1;
 	padding: 1.25rem 0 1.25rem 1.25rem;
+	height: 65px ;
 	cursor: pointer;
 
 	&:hover .cross, &:hover .far, &:hover .fas {
@@ -44,12 +45,36 @@
 		}
 	}
 	&__content {
-		width: 100%;
+		display: inline-block;
+		// width: 100%;
+		width: 80%;
+
+		input {
+			display: inline-block;
+			width: 90%;
+			height: 40px;
+			background-color: transparent;
+			// border: 1px solid black !important;
+			border-radius: 5px;
+			border: solid 1.5px #D3D3D3;
+			// box-shadow: 0 0 5pt 2pt #D3D3D3;
+			background-color: red;
+			// box-shadow: 1px 1px 25px -18px rgba(65, 48, 48, 0.70) inset;
+
+		}
 
 		input, span {
+			// background-color: yellow;
+			// display: inline-block;
 			position: relative;
+			// margin-left: 1.5rem;
+			// padding: 1.25rem 0 1.25rem 1.25rem;
 			margin-left: 1.5rem;
-			width: auto;
+			max-width: 100%;
+			// width: 100%;
+			// padding: 1.25rem 0 1.25rem 1.5rem;
+			// max-width: 80%;
+			// width: 100%;
 			font-family: inherit;
 			outline: none;
 			border: none;
