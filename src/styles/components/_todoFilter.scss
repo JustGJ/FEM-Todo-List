@@ -1,0 +1,28 @@
+.todo__filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background-color: #fff;
+
+    span, button {
+        cursor: pointer;
+        font-family: Josefin Sans;
+        color: #9495A5;
+        letter-spacing: -0.194444px;
+        transition: .3s;
+        &:hover {
+            color: black;
+        }
+    }
+    span {
+        font-size: 0.875rem;
+    }
+    button {
+        border: none;
+        background-color: transparent;
+        font-weight: 700;
+    }
+
+    
+}

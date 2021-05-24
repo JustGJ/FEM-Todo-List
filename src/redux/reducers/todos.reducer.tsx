@@ -1,10 +1,11 @@
 import { v4 as uuidv4 } from 'uuid';
-import { IAction, ITodos, ITodo } from '../interface';
+import { IAction, ITodo } from '../interface';
 import {
 	ADD_TODO,
 	CHANGE_CHECKED_TODO,
 	DELETE_TODO,
 	EDIT_TODO,
+	CLEAR_COMPLETED_TODO,
 } from '../actions/todo.actions';
 
 const initialStateTodos: Array<ITodo> = [
@@ -37,11 +38,19 @@ const todosReducer = (state = initialStateTodos, action: IAction): Array<ITodo> 
 
 		case EDIT_TODO:
 			return state.map(todo => {
-				if(todo.id === action.payload.id) todo.todo = action.payload.todo;
+				if (todo.id === action.payload.id) todo.todo = action.payload.todo;
 				return todo;
-			})
+			});
 
-			default:
+		case CLEAR_COMPLETED_TODO:
+			return state.filter(todo => {
+				if (todo.checked === false) {
+					return true;
+				}
+				return false;
+			});
+
+		default:
 			return state;
 	}
 };
