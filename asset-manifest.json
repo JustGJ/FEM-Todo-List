@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/Todo-List/static/css/main.d5ddf26e.chunk.css",
+    "main.js": "/Todo-List/static/js/main.42f607f7.chunk.js",
+    "main.js.map": "/Todo-List/static/js/main.42f607f7.chunk.js.map",
+    "runtime-main.js": "/Todo-List/static/js/runtime-main.556f109d.js",
+    "runtime-main.js.map": "/Todo-List/static/js/runtime-main.556f109d.js.map",
+    "static/js/2.7b5f7859.chunk.js": "/Todo-List/static/js/2.7b5f7859.chunk.js",
+    "static/js/2.7b5f7859.chunk.js.map": "/Todo-List/static/js/2.7b5f7859.chunk.js.map",
+    "index.html": "/Todo-List/index.html",
+    "static/css/main.d5ddf26e.chunk.css.map": "/Todo-List/static/css/main.d5ddf26e.chunk.css.map",
+    "static/js/2.7b5f7859.chunk.js.LICENSE.txt": "/Todo-List/static/js/2.7b5f7859.chunk.js.LICENSE.txt",
+    "static/media/styles.scss": "/Todo-List/static/media/icon-check.a8fb15d0.svg",
+    "static/media/icon-cross.6ee81d30.svg": "/Todo-List/static/media/icon-cross.6ee81d30.svg",
+    "static/media/icon-moon.6c03114b.svg": "/Todo-List/static/media/icon-moon.6c03114b.svg",
+    "static/media/icon-sun.910b1f9a.svg": "/Todo-List/static/media/icon-sun.910b1f9a.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.556f109d.js",
+    "static/js/2.7b5f7859.chunk.js",
+    "static/css/main.d5ddf26e.chunk.css",
+    "static/js/main.42f607f7.chunk.js"
+  ]
+}
