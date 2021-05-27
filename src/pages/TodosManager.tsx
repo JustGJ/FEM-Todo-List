@@ -5,7 +5,6 @@ import { ITodo } from '../redux/interface';
 import TodoAdd from '../components/TodoAdd';
 import Todo from '../components/Todo';
 import TodoFilter from '../components/TodoFilter';
-import { DragDropContext } from 'react-beautiful-dnd';
 export interface IDarkMode {
 	darkMode: boolean;
 	setDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
@@ -15,7 +14,6 @@ const TodosManager: React.FC<IDarkMode> = ({ darkMode, setDarkMode }) => {
 	const todos: Array<ITodo> = useSelector((state: any) => state);
 	const [selectFilter, setSelectFilter] = useState<string>('all');
 
-	console.log(selectFilter);
 	return (
 		<div className="todoManager">
 			<TodoHeader darkMode={darkMode} setDarkMode={setDarkMode} />
@@ -41,7 +39,11 @@ const TodosManager: React.FC<IDarkMode> = ({ darkMode, setDarkMode }) => {
 						);
 					})}
 			</div>
-			<TodoFilter todos={todos} setSelectFilter={setSelectFilter} />
+			<TodoFilter
+				todos={todos}
+				selectFilter={selectFilter}
+				setSelectFilter={setSelectFilter}
+			/>
 		</div>
 	);
 };

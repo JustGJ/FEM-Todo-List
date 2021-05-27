@@ -18,37 +18,42 @@ const initialStateTodos: Array<ITodo> = [
 ];
 
 const todosReducer = (state = initialStateTodos, action: IAction): Array<ITodo> => {
-	// if (localStorage.getItem('todosData'))
-	// state = JSON.parse(localStorage.getItem('todosData'));
+	if (localStorage.getItem('todosData'))
+		state = JSON.parse(localStorage.getItem('todosData') || '');
 
 	switch (action.type) {
 		case ADD_TODO:
-			return [...state, { id: uuidv4(), todo: action.payload, checked: false }];
-		// localStorage.setItem('todosData', JSON.stringify(state));
-
+			state = [...state, { id: uuidv4(), todo: action.payload, checked: false }];
+			localStorage.setItem('todosData', JSON.stringify(state));
+			return state;
 		case CHANGE_CHECKED_TODO:
-			return state.map(todo => {
+			state = state.map(todo => {
 				if (todo.id === action.payload.id) todo.checked = action.payload.checked;
-				// localStorage.setItem('todosData', JSON.stringify(state));
 				return todo;
 			});
+			localStorage.setItem('todosData', JSON.stringify(state));
+			return state;
 
 		case DELETE_TODO:
-			return state.filter(todo => todo.id !== action.payload);
+			state = state.filter(todo => todo.id !== action.payload);
+			localStorage.setItem('todosData', JSON.stringify(state));
+			return state;
 
 		case EDIT_TODO:
-			return state.map(todo => {
+			return (state = state.map(todo => {
 				if (todo.id === action.payload.id) todo.todo = action.payload.todo;
 				return todo;
-			});
+			}));
 
 		case CLEAR_COMPLETED_TODO:
-			return state.filter(todo => {
+			state = state.filter(todo => {
 				if (todo.checked === false) {
 					return true;
 				}
 				return false;
 			});
+			localStorage.setItem('todosData', JSON.stringify(state));
+			return state;
 
 		default:
 			return state;

@@ -34,3 +34,12 @@
         color: #9495A5;
     }
 }
+
+
+@media screen and (max-width: 600px) {
+    .todoAdd {
+		input {
+			font-size: 0.75rem;
+		}
+	}
+}

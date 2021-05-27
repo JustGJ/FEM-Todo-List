@@ -13,9 +13,9 @@ const TodoAdd = () => {
 	};
 
 	return (
-		<div className="todoAdd">
+		<form onSubmit={newTodo} className="todoAdd">
 			<div className="todoAdd__icon">
-				<i className="fas fa-plus" onClick={() => newTodo()}></i>
+				<i className="fas fa-plus" onClick={newTodo}></i>
 			</div>
 			<input
 				type="text"
@@ -24,7 +24,7 @@ const TodoAdd = () => {
 				onChange={e => setInputValue(e.target.value)}
 				maxLength={40}
 			/>
-		</div>
+		</form>
 	);
 };
 

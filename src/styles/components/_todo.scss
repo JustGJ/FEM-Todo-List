@@ -42,12 +42,17 @@
 				padding: 0.25rem;
 				border-radius: 50%;
 				border: 1px solid #E3E4F1;   
+
+				&:hover {
+					border: 1px solid rgba(192,88,243,1);
+				}
 			}        
 		}
 	}
 	&__content {
 		display: inline-block;
 		width: 80%;
+		margin-left: 1.5rem;
 
 		input {
 			display: inline-block;
@@ -63,7 +68,6 @@
 
 		input, span {
 			position: relative;
-			margin-left: 1.5rem;
 			max-width: 100%;
 			font-family: inherit;
 			outline: none;
@@ -94,6 +98,7 @@
 	}
 	&__option {
 		display: flex;
+		align-items: center;
 		.far, .fas,  .cross {
 			width: 100%;
 			margin-right: 1.25rem;
@@ -123,3 +128,24 @@
 }
 
 
+@media screen and (max-width: 600px) {
+    .todo__content {
+		span, input {
+			font-size: 12px;
+		}
+		&__checked {
+			&::before {
+				bottom: 6px;
+			}		
+		}
+	}
+	.todo__option {
+		img {
+			width: 10px !important;
+			height: 10px;
+		}
+		i {
+			font-size: 10px;
+		}
+	}
+}

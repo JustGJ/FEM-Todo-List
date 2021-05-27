@@ -1,4 +1,4 @@
-.todo__filter {
+.todo__filter__desktop {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -24,5 +24,37 @@
         font-weight: 700;
     }
 
+    &__active {
+        color: #3A7CFD !important;
+    }
     
+}
+
+.todo__filter__mobile {
+    &__infos {
+        display: flex;
+        justify-content: space-between;
+        padding: 16px 20px;
+        color: #9495A5;
+        font-size: 0.75rem ;
+        background-color: #fff;
+        margin-bottom: 16px;
+        
+        span  {
+            cursor: pointer;
+        }
+    }
+    &__select {
+        display: flex;
+        justify-content: space-between;
+        background-color: #fff;
+        padding: 15px 80px;
+    }
+    button {
+        cursor: pointer;
+        border: none;
+        background-color: transparent;
+        font-weight: 700;
+        color: #9495A5;
+    }
 }
